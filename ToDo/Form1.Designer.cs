@@ -151,6 +151,7 @@
             this.btnListabol.Size = new System.Drawing.Size(40, 40);
             this.btnListabol.TabIndex = 4;
             this.btnListabol.UseVisualStyleBackColor = true;
+            this.btnListabol.Click += new System.EventHandler(this.btnListabol_Click);
             // 
             // btnKivesz
             // 
