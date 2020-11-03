@@ -28,34 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.mMneu = new System.Windows.Forms.MenuStrip();
+            this.mMenu = new System.Windows.Forms.MenuStrip();
             this.listákKezeléseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nBeolvavas = new System.Windows.Forms.ToolStripMenuItem();
             this.nMentes = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.nKilepes = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tbBevitel = new System.Windows.Forms.TextBox();
-            this.lbTodo = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnFelvitel = new System.Windows.Forms.Button();
-            this.btnListabol = new System.Windows.Forms.Button();
-            this.btnKivesz = new System.Windows.Forms.Button();
-            this.btnKilepes = new System.Windows.Forms.Button();
             this.btnEltavolit = new System.Windows.Forms.Button();
-            this.mMneu.SuspendLayout();
+            this.btnKivesz = new System.Windows.Forms.Button();
+            this.btnListabol = new System.Windows.Forms.Button();
+            this.btnFelvitel = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbTodo = new System.Windows.Forms.ListBox();
+            this.tbBevitel = new System.Windows.Forms.TextBox();
+            this.btnKilepes = new System.Windows.Forms.Button();
+            this.ofdMegnyitas = new System.Windows.Forms.OpenFileDialog();
+            this.sfdMentes = new System.Windows.Forms.SaveFileDialog();
+            this.mMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // mMneu
+            // mMenu
             // 
-            this.mMneu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.listákKezeléseToolStripMenuItem});
-            this.mMneu.Location = new System.Drawing.Point(0, 0);
-            this.mMneu.Name = "mMneu";
-            this.mMneu.Size = new System.Drawing.Size(584, 24);
-            this.mMneu.TabIndex = 0;
-            this.mMneu.Text = "menuStrip1";
+            this.mMenu.Location = new System.Drawing.Point(0, 0);
+            this.mMenu.Name = "mMenu";
+            this.mMenu.Size = new System.Drawing.Size(584, 24);
+            this.mMenu.TabIndex = 0;
+            this.mMenu.Text = "menuStrip1";
             // 
             // listákKezeléseToolStripMenuItem
             // 
@@ -73,12 +75,14 @@
             this.nBeolvavas.Name = "nBeolvavas";
             this.nBeolvavas.Size = new System.Drawing.Size(180, 22);
             this.nBeolvavas.Text = "Beolvasás";
+            this.nBeolvavas.Click += new System.EventHandler(this.nBeolvavas_Click);
             // 
             // nMentes
             // 
             this.nMentes.Name = "nMentes";
             this.nMentes.Size = new System.Drawing.Size(180, 22);
             this.nMentes.Text = "Mentés";
+            this.nMentes.Click += new System.EventHandler(this.nMentes_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -107,40 +111,27 @@
             this.panel1.Size = new System.Drawing.Size(296, 350);
             this.panel1.TabIndex = 1;
             // 
-            // tbBevitel
+            // btnEltavolit
             // 
-            this.tbBevitel.Location = new System.Drawing.Point(15, 16);
-            this.tbBevitel.Name = "tbBevitel";
-            this.tbBevitel.Size = new System.Drawing.Size(204, 26);
-            this.tbBevitel.TabIndex = 2;
+            this.btnEltavolit.BackgroundImage = global::ToDo.Properties.Resources.trash_can;
+            this.btnEltavolit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEltavolit.Location = new System.Drawing.Point(223, 292);
+            this.btnEltavolit.Name = "btnEltavolit";
+            this.btnEltavolit.Size = new System.Drawing.Size(40, 40);
+            this.btnEltavolit.TabIndex = 7;
+            this.btnEltavolit.UseVisualStyleBackColor = true;
+            this.btnEltavolit.Click += new System.EventHandler(this.btnEltavolit_Click);
             // 
-            // lbTodo
+            // btnKivesz
             // 
-            this.lbTodo.FormattingEnabled = true;
-            this.lbTodo.ItemHeight = 20;
-            this.lbTodo.Location = new System.Drawing.Point(15, 68);
-            this.lbTodo.Name = "lbTodo";
-            this.lbTodo.Size = new System.Drawing.Size(204, 264);
-            this.lbTodo.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 45);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Tennivalók";
-            // 
-            // btnFelvitel
-            // 
-            this.btnFelvitel.BackgroundImage = global::ToDo.Properties.Resources.trash_can;
-            this.btnFelvitel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnFelvitel.Location = new System.Drawing.Point(225, 9);
-            this.btnFelvitel.Name = "btnFelvitel";
-            this.btnFelvitel.Size = new System.Drawing.Size(40, 40);
-            this.btnFelvitel.TabIndex = 3;
-            this.btnFelvitel.UseVisualStyleBackColor = true;
+            this.btnKivesz.BackgroundImage = global::ToDo.Properties.Resources.minus;
+            this.btnKivesz.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnKivesz.Location = new System.Drawing.Point(225, 114);
+            this.btnKivesz.Name = "btnKivesz";
+            this.btnKivesz.Size = new System.Drawing.Size(40, 40);
+            this.btnKivesz.TabIndex = 5;
+            this.btnKivesz.UseVisualStyleBackColor = true;
+            this.btnKivesz.Click += new System.EventHandler(this.btnKivesz_Click);
             // 
             // btnListabol
             // 
@@ -153,15 +144,42 @@
             this.btnListabol.UseVisualStyleBackColor = true;
             this.btnListabol.Click += new System.EventHandler(this.btnListabol_Click);
             // 
-            // btnKivesz
+            // btnFelvitel
             // 
-            this.btnKivesz.BackgroundImage = global::ToDo.Properties.Resources.minus;
-            this.btnKivesz.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnKivesz.Location = new System.Drawing.Point(225, 114);
-            this.btnKivesz.Name = "btnKivesz";
-            this.btnKivesz.Size = new System.Drawing.Size(40, 40);
-            this.btnKivesz.TabIndex = 5;
-            this.btnKivesz.UseVisualStyleBackColor = true;
+            this.btnFelvitel.BackgroundImage = global::ToDo.Properties.Resources.trash_can;
+            this.btnFelvitel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnFelvitel.Location = new System.Drawing.Point(225, 9);
+            this.btnFelvitel.Name = "btnFelvitel";
+            this.btnFelvitel.Size = new System.Drawing.Size(40, 40);
+            this.btnFelvitel.TabIndex = 3;
+            this.btnFelvitel.UseVisualStyleBackColor = true;
+            this.btnFelvitel.Click += new System.EventHandler(this.btnFelvitel_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(11, 45);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(84, 20);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Tennivalók";
+            // 
+            // lbTodo
+            // 
+            this.lbTodo.FormattingEnabled = true;
+            this.lbTodo.ItemHeight = 20;
+            this.lbTodo.Location = new System.Drawing.Point(15, 68);
+            this.lbTodo.Name = "lbTodo";
+            this.lbTodo.Size = new System.Drawing.Size(204, 264);
+            this.lbTodo.TabIndex = 2;
+            this.lbTodo.SelectedIndexChanged += new System.EventHandler(this.lbTodo_SelectedIndexChanged);
+            // 
+            // tbBevitel
+            // 
+            this.tbBevitel.Location = new System.Drawing.Point(15, 16);
+            this.tbBevitel.Name = "tbBevitel";
+            this.tbBevitel.Size = new System.Drawing.Size(204, 26);
+            this.tbBevitel.TabIndex = 2;
             // 
             // btnKilepes
             // 
@@ -178,34 +196,36 @@
             this.btnKilepes.UseVisualStyleBackColor = true;
             this.btnKilepes.Click += new System.EventHandler(this.btnKilepes_Click);
             // 
-            // btnEltavolit
+            // ofdMegnyitas
             // 
-            this.btnEltavolit.BackgroundImage = global::ToDo.Properties.Resources.trash_can;
-            this.btnEltavolit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEltavolit.Location = new System.Drawing.Point(223, 292);
-            this.btnEltavolit.Name = "btnEltavolit";
-            this.btnEltavolit.Size = new System.Drawing.Size(40, 40);
-            this.btnEltavolit.TabIndex = 7;
-            this.btnEltavolit.UseVisualStyleBackColor = true;
+            this.ofdMegnyitas.Filter = "ToDo lista|*.txt";
+            this.ofdMegnyitas.Title = "ToDo lista beolvasása";
+            // 
+            // sfdMentes
+            // 
+            this.sfdMentes.DefaultExt = "txt";
+            this.sfdMentes.Filter = "ToDo lista|*.txt";
+            this.sfdMentes.Title = "ToDo lista mentése";
             // 
             // frmKezdo
             // 
+            this.AcceptButton = this.btnFelvitel;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 461);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnKilepes);
-            this.Controls.Add(this.mMneu);
+            this.Controls.Add(this.mMenu);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.MainMenuStrip = this.mMneu;
+            this.MainMenuStrip = this.mMenu;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmKezdo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ToDo lista készítése";
             this.Shown += new System.EventHandler(this.frmKezdo_Shown);
-            this.mMneu.ResumeLayout(false);
-            this.mMneu.PerformLayout();
+            this.mMenu.ResumeLayout(false);
+            this.mMenu.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -215,7 +235,7 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip mMneu;
+        private System.Windows.Forms.MenuStrip mMenu;
         private System.Windows.Forms.ToolStripMenuItem listákKezeléseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nBeolvavas;
         private System.Windows.Forms.ToolStripMenuItem nMentes;
@@ -230,6 +250,8 @@
         private System.Windows.Forms.ListBox lbTodo;
         private System.Windows.Forms.TextBox tbBevitel;
         private System.Windows.Forms.Button btnKilepes;
+        private System.Windows.Forms.OpenFileDialog ofdMegnyitas;
+        private System.Windows.Forms.SaveFileDialog sfdMentes;
     }
 }
 
